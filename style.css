@@ -1,0 +1,164 @@
+.container{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    overflow: hidden;
+}
+.container{
+    position: absolute;
+    top: 20%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Concept 1: Cyberpunk Neon */
+.circle {
+    position: absolute;
+    background: transparent;
+    width: calc(var(--i) * 2.5vmin);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid #00fff2; 
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animate 3s ease-in-out calc(var(--i) * 0.10s) infinite;
+    box-shadow: 0 0 15px rgba(0, 255, 242, 0.5);
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: rotateX(70deg) translateZ(50px) translateY(0);
+        border-color: #00fff2; 
+    }
+    50% {
+        transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+        border-color: #ff00ee; 
+    }
+}
+
+
+/* Concept 2: Golden Luxury */
+/* .circle {
+    position: absolute;
+    background: transparent;
+    width: calc(var(--i) * 2.5vmin);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid #ffd700; 
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animate 3s ease-in-out calc(var(--i) * 0.10s) infinite;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+@keyframes animate {
+    0%, 100% {
+        transform: rotateX(70deg) translateZ(50px) translateY(0);
+        border-color: #ffd700; 
+    }
+    50% {
+        transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+        border-color: #ffffff; 
+    }
+} */
+
+
+
+/* Concept 3: Dark Mode */
+/* .circle{
+    position: absolute;
+    background: transparent;
+    width: calc(var(--i) * 2.5vmin);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid rgb(0,255,13);
+    transform-style: preserve-3d;
+    transform: rotateX(70deg) translateZ(50px);
+    animation: animate 3s ease-in-out calc(var(--i) * 0.10s) infinite;
+    box-shadow: 0 0 15px rgb(124, 124, 124);
+}
+
+@keyframes animate{
+    0%, 100%{
+        transform: rotateX(70deg) translateZ(50px) translateY(0);
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        transform: rotateX(70deg) translateZ(50px) translateY(-50vmin);
+        filter: hue-rotate(360deg);
+    }
+} */
+
+/* For mobile phones */
+@media screen and (max-width: 480px) {
+    .container {
+        top: 10%;
+        height: 70%;
+    }
+    
+    .circle {
+        width: calc(var(--i) * 1.5vmin); /* Even smaller circles */
+        border-width: 1.5px; /* Even thinner borders */
+    }
+
+    @keyframes animate {
+        0%, 100% {
+            transform: rotateX(70deg) translateZ(20px) translateY(0);
+        }
+        50% {
+            transform: rotateX(70deg) translateZ(20px) translateY(-30vmin);
+        }
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 320px) {
+    .container {
+        top: 5%;
+        height: 60%;
+    }
+    
+    .circle {
+        width: calc(var(--i) * 1.2vmin); /* Smallest circles */
+        border-width: 1px; /* Thinnest borders */
+    }
+
+    @keyframes animate {
+        0%, 100% {
+            transform: rotateX(70deg) translateZ(15px) translateY(0);
+        }
+        50% {
+            transform: rotateX(70deg) translateZ(15px) translateY(-25vmin);
+        }
+    }
+}
+
+/* For landscape orientation */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .container {
+        top: 5%;
+        height: 90%;
+    }
+    
+    .circle {
+        width: calc(var(--i) * 1.8vmin);
+        border-width: 1.5px;
+    }
+
+    @keyframes animate {
+        0%, 100% {
+            transform: rotateX(70deg) translateZ(25px) translateY(0);
+        }
+        50% {
+            transform: rotateX(70deg) translateZ(25px) translateY(-20vmin);
+        }
+    }
+}
